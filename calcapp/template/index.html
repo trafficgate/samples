@@ -1,0 +1,19 @@
+<html><body>
+<h1>CalcApp</h1>
+
+<!-- 入力フォーム -->
+<form action="./index.cgi" method="POST">
+<input type="text" name="arg1" size="2"> +
+<input type="text" name="arg2" size="2"> =
+[% result %]
+<input type="submit" name="action" value=" CALC ">
+</form>
+
+<!-- 履歴の表示 -->
+<b>recent 10 inputs</b><br>
+[% FOREACH h = session.param('history') %]
+[% h.arg1 | html %] + [% h.arg2 | html %] = [% h.result %]
+<br>
+[% END %]
+
+</body></html>
