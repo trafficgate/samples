@@ -66,7 +66,8 @@ sub wikipage_exists {
 sub as_html {
     my $self = shift;
     my $formatter = SledgeWiki::Formatter->new($self);
-    $formatter->process($self->body);
+    (my $body = $self->body) =~ tr/\r//d;
+    $formatter->process($body);
 }
 
 1;
