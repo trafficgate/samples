@@ -1,0 +1,17 @@
+[% INCLUDE include/header.inc title = wikipage.name %]
+<div id="content">
+<div class="blog">
+
+<div class="blogbody">
+<form action="./" method="POST">
+<input type="hidden" name=".cmd" value="edit" />
+<input type="hidden" name="page" value="[% wikipage.name | html %]" />
+<textarea rows="20" cols="80" name="body">[% wikipage.body | html %]</textarea>
+<br />
+<input type="submit" value=" Edit " />
+</form>
+</div>
+
+</div>
+</div>
+[% INCLUDE include/footer.inc %]

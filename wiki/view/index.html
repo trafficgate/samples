@@ -1,0 +1,17 @@
+[% INCLUDE include/header.inc title = wikipage.name %]
+<div id="content">
+<div class="blog">
+
+<div class="blogbody">
+[% wikipage.as_html %]
+</div>
+
+<div class="editbox">
+[% USE script = url("./") %]
+<a href="[% script(".cmd"="edit", page=wikipage.name) %]">Edit this page</a>
+| <a href="[% script %]?[% wikipage.default_name %]">[% wikipage.default_name %]</a>
+</div>
+
+</div>
+</div>
+[% INCLUDE include/footer.inc %]

@@ -1,0 +1,14 @@
+package SledgeWiki::Config::_common;
+use strict;
+use vars qw(%C);
+*Config = \%C;
+
+$C{TMPL_PATH}     = '/path/to/sledgewiki/view';
+$C{DATASOURCE}    = [ 'dbi:mysql:sledgewiki','USER', 'PASS' ];
+$C{COOKIE_NAME}   = 'sledge_sid';
+$C{COOKIE_PATH}   = '/';
+$C{COOKIE_DOMAIN} = undef;
+
+$SledgeWiki::WikiPage::WikiDir = "/path/to/sledgewiki/vars/wiki";
+
+1;
