@@ -1,0 +1,5 @@
+[% cart = session.param('cart') %]
+カートの中身: [% cart.total_quantity %] アイテム
+  / [% cart.total_price %]円 |
+<a href="register.cgi">レジへ行く</a>
+<hr>

@@ -1,0 +1,30 @@
+[% INCLUDE book/header.html %]
+<h3>レジ: カートの中身</h3>
+[% cart = session.param('cart') %]
+
+<table>
+[% FOREACH book = cart.items %]
+<form action="register.cgi">
+<input type="hidden" name="id" value="[% book.id %]">
+<tr>
+  <td><b>[% book.title %]</b></td>
+  <td>[% book.price %]円</td>
+  <td>x <input type="text" name="quantity" size="1"
+       value="[% cart.quantity_for(book) %]"></td>
+  <td><input type="submit" value="再計算"></td>
+</tr>
+</form>
+[% END %]
+<tr>
+  <td align="right">総計</td>
+  <td align="right">[% cart.total_price %]円</td>
+</tr>
+</table>
+
+<form action="register.cgi" method="POST">
+<input type="submit" value="この内容で購入する">
+</form>
+
+<hr>
+<a href="index.cgi">ショッピングを続ける</a>
+</body></html>

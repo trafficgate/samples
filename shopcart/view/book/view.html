@@ -1,0 +1,13 @@
+[% INCLUDE book/header.html %]
+<h3>書籍詳細</h3>
+[% INCLUDE book/cart.html %]
+
+<b>[% book.title %]</b>
+<ul>
+  <li>出版元: [% book.publisher %]
+  <li>価格: [% book.price %]円
+</ul>
+<a href="add_cart.cgi?id=[% book.id %]">カートに入れる</a>
+<hr>
+<a href="index.cgi">もどる</a>
+</body></html>
