@@ -73,7 +73,7 @@ sub post_dispatch_register {
     my $cart = $self->session->param('cart');
        $cart->clear();  # カートを空に
     $self->load_template('register_done');
-    $self->finished(1); # GETにいかずに終了
+    $self->output_content(); # GETにいかずに終了
 }
 
 1;
